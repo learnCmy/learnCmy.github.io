@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -82,10 +82,10 @@
 <meta name="description" content="类加载子系统负责从文件系统或者网络中加载Class文件，class文件在文件开头有特定的文件标识">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jvm类加载子系统-02">
-<meta property="og:url" content="http://example.com/2021/09/01/jvm%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%AD%90%E7%B3%BB%E7%BB%9F-02/index.html">
+<meta property="og:url" content="http://caimingyang.top/2021/09/01/jvm%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%AD%90%E7%B3%BB%E7%BB%9F-02/index.html">
 <meta property="og:site_name" content="小菜的学习空间">
 <meta property="og:description" content="类加载子系统负责从文件系统或者网络中加载Class文件，class文件在文件开头有特定的文件标识">
-<meta property="og:locale">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/3/18/170ec7cd31581d15~tplv-t2oaga2asx-watermark.awebp">
 <meta property="og:image" content="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/3/18/170ec7d7217f0c1c~tplv-t2oaga2asx-watermark.awebp">
 <meta property="og:image" content="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/3/18/170ec7daeca85a52~tplv-t2oaga2asx-watermark.awebp">
@@ -118,13 +118,13 @@
     root: '',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: '博主'
+      author: 'Author'
     },
     algolia: {
       applicationID: '',
@@ -138,7 +138,7 @@
 
 
 
-  <link rel="canonical" href="http://example.com/2021/09/01/jvm类加载子系统-02/"/>
+  <link rel="canonical" href="http://caimingyang.top/2021/09/01/jvm类加载子系统-02/"/>
 
 
 
@@ -156,7 +156,7 @@
 
 <meta name="generator" content="Hexo 5.4.0"></head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -204,7 +204,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            首页
+            Home
           </a>
         </li>
       
@@ -214,7 +214,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            标签
+            Tags
           </a>
         </li>
       
@@ -224,7 +224,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            分类
+            Categories
           </a>
         </li>
       
@@ -234,7 +234,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
-            公益404
+            Commonweal 404
           </a>
         </li>
       
@@ -271,12 +271,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/01/jvm%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%AD%90%E7%B3%BB%E7%BB%9F-02/">
+    <link itemprop="mainEntityOfPage" href="http://caimingyang.top/2021/09/01/jvm%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%AD%90%E7%B3%BB%E7%BB%9F-02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/touxiang.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -298,9 +298,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-09-01T20:19:42+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-09-01T20:19:42+08:00">
                 2021-09-01
               </time>
             
@@ -319,7 +319,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -399,7 +399,7 @@
 <li><p>初始化阶段就是执行类构造器方法clinit（）的过程。</p>
 </li>
 <li><p>此方法不需要定义，是javac编译器自动收集类中的所有类变量的赋值动作和静态代码块中的语句合并而来。 </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我们注意到如果没有静态变量c，那么字节码文件中就不会有clinit方法</span><br></pre></td></tr></table></figure>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我们注意到如果没有静态变量<span class="keyword">c</span>，那么字节码文件中就不会有clinit方法</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/3/18/170ec7ee5e625699~tplv-t2oaga2asx-watermark.awebp" alt="img"></p>
 <p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/3/18/170ec7f508f951e6~tplv-t2oaga2asx-watermark.awebp" alt="img"></p>
@@ -427,7 +427,7 @@
 <li>对于用户自定义类来说：使用系统类加载器AppClassLoader进行加载</li>
 <li>java核心类库都是使用引导类加载器BootStrapClassLoader加载的</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * ClassLoader加载</span><br><span class="line"> */</span><br><span class="line">public class ClassLoaderTest &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        //获取系统类加载器</span><br><span class="line">        ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();</span><br><span class="line">        System.out.println(systemClassLoader);//sun.misc.Launcher$AppClassLoader@18b4aac2</span><br><span class="line"></span><br><span class="line">        //获取其上层  扩展类加载器</span><br><span class="line">        ClassLoader extClassLoader = systemClassLoader.getParent();</span><br><span class="line">        System.out.println(extClassLoader);//sun.misc.Launcher$ExtClassLoader@610455d6</span><br><span class="line"></span><br><span class="line">        //获取其上层 获取不到引导类加载器</span><br><span class="line">        ClassLoader bootStrapClassLoader = extClassLoader.getParent();</span><br><span class="line">        System.out.println(bootStrapClassLoader);//null</span><br><span class="line"></span><br><span class="line">        //对于用户自定义类来说：使用系统类加载器进行加载</span><br><span class="line">        ClassLoader classLoader = ClassLoaderTest.class.getClassLoader();</span><br><span class="line">        System.out.println(classLoader);//sun.misc.Launcher$AppClassLoader@18b4aac2</span><br><span class="line"></span><br><span class="line">        //String 类使用引导类加载器进行加载的  --&gt;java核心类库都是使用引导类加载器加载的</span><br><span class="line">        ClassLoader classLoader1 = String.class.getClassLoader();</span><br><span class="line">        System.out.println(classLoader1);//null</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * ClassLoader加载</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public <span class="keyword">class</span> ClassLoaderTest &#123;</span><br><span class="line">    public static void main(String<span class="literal">[]</span> args) &#123;</span><br><span class="line">        <span class="comment">//获取系统类加载器</span></span><br><span class="line">        ClassLoader systemClassLoader = <span class="module-access"><span class="module"><span class="identifier">ClassLoader</span>.</span></span>get<span class="constructor">SystemClassLoader()</span>;</span><br><span class="line">        <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(systemClassLoader);<span class="comment">//sun.misc.Launcher$AppClassLoader@18b4aac2</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取其上层  扩展类加载器</span></span><br><span class="line">        ClassLoader extClassLoader = systemClassLoader.get<span class="constructor">Parent()</span>;</span><br><span class="line">        <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(extClassLoader);<span class="comment">//sun.misc.Launcher$ExtClassLoader@610455d6</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取其上层 获取不到引导类加载器</span></span><br><span class="line">        ClassLoader bootStrapClassLoader = extClassLoader.get<span class="constructor">Parent()</span>;</span><br><span class="line">        <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(bootStrapClassLoader);<span class="comment">//null</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//对于用户自定义类来说：使用系统类加载器进行加载</span></span><br><span class="line">        ClassLoader classLoader = <span class="module-access"><span class="module"><span class="identifier">ClassLoaderTest</span>.</span></span><span class="keyword">class</span>.get<span class="constructor">ClassLoader()</span>;</span><br><span class="line">        <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(classLoader);<span class="comment">//sun.misc.Launcher$AppClassLoader@18b4aac2</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//String 类使用引导类加载器进行加载的  --&gt;java核心类库都是使用引导类加载器加载的</span></span><br><span class="line">        ClassLoader classLoader1 = <span class="module-access"><span class="module"><span class="identifier">String</span>.</span></span><span class="keyword">class</span>.get<span class="constructor">ClassLoader()</span>;</span><br><span class="line">        <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(classLoader1);<span class="comment">//null</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-2-虚拟机自带的加载器"><a href="#2-2-虚拟机自带的加载器" class="headerlink" title="2.2 虚拟机自带的加载器"></a>2.2 虚拟机自带的加载器</h3><ul>
 <li><p>①启动类加载器（引导类加载器，BootStrap ClassLoader）</p>
@@ -458,7 +458,7 @@
 </ul>
 <h5 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h5></li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 虚拟机自带加载器</span><br><span class="line"> */</span><br><span class="line">public class ClassLoaderTest1 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        System.out.println(&quot;********启动类加载器*********&quot;);</span><br><span class="line">        URL[] urls = sun.misc.Launcher.getBootstrapClassPath().getURLs();</span><br><span class="line">        //获取BootStrapClassLoader能够加载的api路径</span><br><span class="line">        for (URL e:urls)&#123;</span><br><span class="line">            System.out.println(e.toExternalForm());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //从上面的路径中随意选择一个类 看看他的类加载器是什么</span><br><span class="line">        //Provider位于 /jdk1.8.0_171.jdk/Contents/Home/jre/lib/jsse.jar 下，引导类加载器加载它</span><br><span class="line">        ClassLoader classLoader = Provider.class.getClassLoader();</span><br><span class="line">        System.out.println(classLoader);//null</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;********拓展类加载器********&quot;);</span><br><span class="line">        String extDirs = System.getProperty(&quot;java.ext.dirs&quot;);</span><br><span class="line">        for (String path : extDirs.split(&quot;;&quot;))&#123;</span><br><span class="line">            System.out.println(path);</span><br><span class="line">        &#125;</span><br><span class="line">        //从上面的路径中随意选择一个类 看看他的类加载器是什么:拓展类加载器</span><br><span class="line">        ClassLoader classLoader1 = CurveDB.class.getClassLoader();</span><br><span class="line">        System.out.println(classLoader1);//sun.misc.Launcher$ExtClassLoader@4dc63996</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 虚拟机自带加载器</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">public <span class="keyword">class</span> ClassLoaderTest1 &#123;</span><br><span class="line">    public static void main(String<span class="literal">[]</span> args) &#123;</span><br><span class="line">        <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(<span class="string">&quot;********启动类加载器*********&quot;</span>);</span><br><span class="line">        URL<span class="literal">[]</span> urls = sun.misc.<span class="module-access"><span class="module"><span class="identifier">Launcher</span>.</span></span>get<span class="constructor">BootstrapClassPath()</span>.get<span class="constructor">URLs()</span>;</span><br><span class="line">        <span class="comment">//获取BootStrapClassLoader能够加载的api路径</span></span><br><span class="line">        <span class="keyword">for</span> (URL e:urls)&#123;</span><br><span class="line">            <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(e.<span class="keyword">to</span><span class="constructor">ExternalForm()</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//从上面的路径中随意选择一个类 看看他的类加载器是什么</span></span><br><span class="line">        <span class="comment">//Provider位于 /jdk1.8.0_171.jdk/Contents/Home/jre/lib/jsse.jar 下，引导类加载器加载它</span></span><br><span class="line">        ClassLoader classLoader = <span class="module-access"><span class="module"><span class="identifier">Provider</span>.</span></span><span class="keyword">class</span>.get<span class="constructor">ClassLoader()</span>;</span><br><span class="line">        <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(classLoader);<span class="comment">//null</span></span><br><span class="line"></span><br><span class="line">        <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(<span class="string">&quot;********拓展类加载器********&quot;</span>);</span><br><span class="line">        String extDirs = <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>get<span class="constructor">Property(<span class="string">&quot;java.ext.dirs&quot;</span>)</span>;</span><br><span class="line">        <span class="keyword">for</span> (String path : extDirs.split(<span class="string">&quot;;&quot;</span>))&#123;</span><br><span class="line">            <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(path);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//从上面的路径中随意选择一个类 看看他的类加载器是什么:拓展类加载器</span></span><br><span class="line">        ClassLoader classLoader1 = <span class="module-access"><span class="module"><span class="identifier">CurveDB</span>.</span></span><span class="keyword">class</span>.get<span class="constructor">ClassLoader()</span>;</span><br><span class="line">        <span class="module-access"><span class="module"><span class="identifier">System</span>.</span></span>out.println(classLoader1);<span class="comment">//sun.misc.Launcher$ExtClassLoader@4dc63996</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-3-用户自定义类加载器"><a href="#2-3-用户自定义类加载器" class="headerlink" title="2.3 用户自定义类加载器"></a>2.3 用户自定义类加载器</h3><p><strong>为什么</strong></p>
 <ul>
@@ -635,10 +635,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
+            Overview
           </li>
         </ul>
       
@@ -646,6 +646,10 @@
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/touxiang.jpg"
+                alt="" />
             
               <p class="site-author-name" itemprop="name"></p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -659,7 +663,7 @@
                 <a href="/archives">
               
                   <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">日志</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -670,7 +674,7 @@
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
                   <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">分类</span>
+                  <span class="site-state-item-name">categories</span>
                 </a>
               </div>
             
@@ -681,7 +685,7 @@
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">标签</span>
+                  <span class="site-state-item-name">tags</span>
                 </a>
               </div>
             
@@ -746,6 +750,13 @@
       
 
       
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
 
     </div>
   </aside>
@@ -767,15 +778,11 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
-  <span class="post-meta-divider">|</span>
 
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
@@ -792,11 +799,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
     
